@@ -6,13 +6,9 @@ Currently Supports:
 - Forward user messages from crisp to admins on telegram.
 - Reply user messages directly on telegram.
 
-Will Support:
-- Integration with Slack
-- Detailed visitor info
-
 ## Getting Started
 
-1. Get your crisp API credentials from [Crisp API token generator](https://go.crisp.chat/account/token/)
+1. Get your crisp API credentials from [Crisp API token generator](https://docs.crisp.chat/guides/rest-api/authentication/)
 1. Create a bot with [BotFather](https://t.me/botfather), save the token for later use.
 1. Build & Run.
 
