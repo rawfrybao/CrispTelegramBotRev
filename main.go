@@ -128,7 +128,7 @@ func init() {
 	log.Printf("Initializing Crisp Listner")
 	client = crisp.New()
 	// Set authentication parameters
-	client.Authenticate(config.GetString("crisp.identifier"), config.GetString("crisp.key"))
+	client.AuthenticateTier("plugin", config.GetString("crisp.identifier"), config.GetString("crisp.key"))
 
 	// Connect to realtime events backend and listen (only to 'message:send' namespace)
 	client.Events.Listen(
