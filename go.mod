@@ -1,4 +1,4 @@
-module github.com/tonyzzzzzz/Crisp_Telegram_bot
+module github.com/rawfrybao/CrispTelegramBotRev
 
 go 1.12
 

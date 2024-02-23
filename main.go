@@ -10,8 +10,8 @@ import (
 	"github.com/crisp-im/go-crisp-api/crisp"
 	"github.com/go-redis/redis"
 	tgbotapi "github.com/go-telegram-bot-api/telegram-bot-api"
+	"github.com/rawfrybao/CrispTelegramBotRev/utils"
 	"github.com/spf13/viper"
-	"github.com/tonyzzzzzz/Crisp_Telegram_bot/utils"
 )
 
 var bot *tgbotapi.BotAPI
@@ -189,13 +189,13 @@ func main() {
 
 		switch update.Message.Command() {
 		case "start":
-			msg := tgbotapi.NewMessage(update.Message.Chat.ID, "Blinkload Telegram 客服助手")
+			msg := tgbotapi.NewMessage(update.Message.Chat.ID, "Crisp Telegram 客服助手")
 			msg.ParseMode = "Markdown"
 			bot.Send(msg)
-		}
-
-		if contains(config.Get("admins").([]interface{}), int64(update.Message.From.ID)) {
-			replyToUser(&update)
+		default:
+			if contains(config.Get("admins").([]interface{}), int64(update.Message.From.ID)) {
+				replyToUser(&update)
+			}
 		}
 	}
 }
